@@ -1,26 +1,17 @@
-MMud+ — Proprietary Software License
-Copyright (c) 2026 AyaTheHusker. All rights reserved.
+MMud+ License
+Copyright (c) 2026 AyaTheHusker
 
-MMud+ ("the Software") is closed-source proprietary software distributed in
-binary form only.
+You are free to use, modify, share, and build your own versions of MMud+, for
+any purpose, at no cost.
 
-Permission is granted to the individual downloader to install and use the
-Software for personal, non-commercial play alongside a legally obtained copy of
-MegaMUD.
+The only condition: don't pass MMud+ (or a version based on it) off as your own
+original work. Keep credit to the original author (AyaTheHusker). If you release
+a modified version, make it clear it's a modification of MMud+ and not the
+original.
 
-You may NOT, in whole or in part:
-  - decompile, disassemble, reverse-engineer, or otherwise attempt to derive the
-    source code of the Software;
-  - modify, adapt, or create derivative works of the Software;
-  - redistribute, sublicense, sell, rent, lease, or otherwise transfer the
-    Software to any third party;
-  - remove or alter any copyright, attribution, or license notices.
-
-The Software is provided "AS IS", without warranty of any kind, express or
-implied, including but not limited to the warranties of merchantability, fitness
-for a particular purpose, and non-infringement. In no event shall the author be
-liable for any claim, damages, or other liability arising from, out of, or in
-connection with the Software or its use.
+MMud+ is provided "AS IS", without warranty of any kind, express or implied. In
+no event shall the author be liable for any claim, damages, or other liability
+arising from, out of, or in connection with the Software or its use.
 
 MMud+ is not affiliated with, authorized by, or endorsed by the makers of
 MegaMUD or MajorMUD. All third-party names and trademarks are the property of

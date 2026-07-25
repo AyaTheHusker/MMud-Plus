@@ -34,9 +34,10 @@ To uninstall, delete the files the zip added (chiefly `msimg32.dll`, the
 ## Releases
 
 Builds only. See [Releases](../../releases) for each version + its changelog.
-This repository contains **no source code** — MMud+ is closed source.
+This repository contains **no source code** — MMud+ ships as builds only.
 
 ## License
 
-Proprietary. All rights reserved. See [LICENSE](LICENSE). You may download and
-use MMud+ for personal play; you may not decompile, modify, or redistribute it.
+Free to use, modify, and share. See [LICENSE](LICENSE). The only ask: don't pass
+MMud+ (or a version based on it) off as your own — keep credit to the original
+author. Provided as-is, no warranty.
