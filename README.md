@@ -1,3 +1,24 @@
+## ⚠️ MMud+ 1.15 — Final Release for MegaMMUD 2.0.5
+
+**This is the last MMud+ release built for MegaMMUD 2.0.5.** It exists because
+several of the bugs fixed here are serious enough that we couldn't leave them in
+the wild — including cases where a character could sit defenseless while resting
+on a dynamic loop. If you run MMud+ on 2.0.5, you should update:
+**[Download MMud+ 1.15](https://github.com/AyaTheHusker/MMud-Plus/releases/tag/v1.15)**
+
+**Where MMud+ goes from here:** newer versions of MegaMMUD will run MMud+ as a
+plugin. Thanks to Syntax for helping add an official — and much more stable —
+way for MMud+ to attach to newer versions of MegaMMUD: the old system was a
+reverse-engineered overlay that had to be rebuilt against every MegaMMUD update;
+going forward, MMud+ will be an actual plugin, integrating naturally with
+MegaMMUD's ABI.
+
+Active development has moved to the plugin version. This 2.0.5 build will not
+receive further features; it's here so nobody has to run known-dangerous code
+while the new system lands.
+
+---
+
 # MMud+
 
 **MMud+ is a modular overlay for MegaMMUD 2.0.5 by Syntax** — a closed-source
