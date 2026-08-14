@@ -1,28 +1,28 @@
-## ⚠️ MMud+ 1.15 — Final Release for MegaMMUD 2.0.5
+## MMud+ for MegaMMUD 2.1 — official plugin (current)
 
-**This is the last MMud+ release built for MegaMMUD 2.0.5.** It exists because
-several of the bugs fixed here are serious enough that we couldn't leave them in
-the wild — including cases where a character could sit defenseless while resting
-on a dynamic loop. If you run MMud+ on 2.0.5, you should update:
-**[Download MMud+ 1.15](https://github.com/AyaTheHusker/MMud-Plus/releases/tag/v1.15)**
+**MMud+ now ships as an official MegaMMUD 2.1 plugin** — one file,
+`Plugins\MMudPlus\MMudPlus.dll`, loaded through MegaMMUD's own plugin API.
+Thanks to Syntax for adding the official plugin ABI: the old system was a
+reverse-engineered overlay that had to be rebuilt against every MegaMMUD
+update; the plugin integrates naturally and survives host updates.
 
-**Where MMud+ goes from here:** newer versions of MegaMMUD will run MMud+ as a
-plugin. Thanks to Syntax for helping add an official — and much more stable —
-way for MMud+ to attach to newer versions of MegaMMUD: the old system was a
-reverse-engineered overlay that had to be rebuilt against every MegaMMUD update;
-going forward, MMud+ will be an actual plugin, integrating naturally with
-MegaMMUD's ABI.
+**Latest: [MMud+ 1.007](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
+extract the zip into your MegaMUD folder and launch. Each release page carries
+its full changelog, and the plugin checks for updates on its own (hourly + at
+launch).
 
-Active development has moved to the plugin version. This 2.0.5 build will not
-receive further features; it's here so nobody has to run known-dangerous code
-while the new system lands.
+**Still on MegaMMUD 2.0.5?** The final overlay-era build is
+**[MMud+ 1.15](https://github.com/AyaTheHusker/MMud-Plus/releases/tag/v1.15)** —
+it fixes bugs serious enough that you should not run anything older (including
+cases where a character could sit defenseless while resting on a dynamic loop).
+The 2.0.5 line receives no further features.
 
 ---
 
 # MMud+
 
-**MMud+ is a modular overlay for MegaMMUD 2.0.5 by Syntax** — a closed-source
-proxy + plugin suite that adds a modern in-game experience without modifying the
+**MMud+ is a modular in-game suite for MegaMMUD by Syntax** — an official
+plugin that adds a modern in-game experience without modifying the
 MegaMUD client itself. It layers on top of an existing MegaMUD install and can be
 removed at any time by deleting the files it adds.
 
@@ -56,14 +56,16 @@ removed at any time by deleting the files it adds.
 
 ## Install
 
-1. Install MegaMUD normally (you provide your own copy).
-2. Download the latest `MegamudPlusX.XX.zip` from the [Releases](../../releases) page.
-3. Extract its contents **into your `C:\MegaMUD` folder** (it overlays — it adds
-   MMud+ files and touches none of MegaMUD's own).
-4. Launch MegaMUD as usual. Press **F11** in-game for the overlay.
+1. Install MegaMMUD 2.1 normally (you provide your own copy).
+2. Download the latest `MMudPlus-X.XXX.zip` from the [Releases](../../releases)
+   page.
+3. Extract it **into your MegaMUD folder** (the one with `megamud.exe`). It
+   drops `Plugins\MMudPlus\MMudPlus.dll` in the right place and touches none
+   of MegaMUD's own files.
+4. Launch MegaMUD as usual — the plugin loads itself. Updating from any earlier
+   version works the same way (or let the in-app updater fetch it).
 
-To uninstall, delete the files the zip added (chiefly `msimg32.dll`, the
-`plugins\` additions, and `rodentia.exe`).
+To uninstall, delete the `Plugins\MMudPlus\` folder.
 
 ## Releases
 
