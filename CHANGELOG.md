@@ -3,6 +3,17 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.008 — 2026-08-14
+- Walker safety hardening: wall bumps = instant freeze + re-verify + replan,
+  with a permanent `wallbumps.log` record; hazard-exit and duplicate-move
+  vetoes on every direction send (Black Moat class eliminated).
+- Puzzle mazes: complete lever tours in MDB order (destination gate modeled
+  first, shared levers deduped); gated directions fire only when the server
+  lists the exit open; no lever re-pulls.
+- Single room display per step incl. meditating walks (glued prompt+cluster
+  consumed); idle combat toggle never touched; debug logging persists;
+  step cap 1500.
+
 ## 1.007 — 2026-08-14
 - The walker's per-step room query (`Location:` / `Regen Time:` / `Room Illu:`
   lines) is hidden from the terminal again — a 1.006-era regression let it spam
