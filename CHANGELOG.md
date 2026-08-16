@@ -3,6 +3,30 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.009 — 2026-08-16
+- Drag mode: explicit LOOP CFG checkbox with a per-room delay that actually
+  paces every room of the loop (armed on arrival from every position source;
+  fight commits and bails can no longer wipe it) — set it near your lairs'
+  regen and dead laps disappear. The mob-arrival settle hold is behind the
+  same checkbox; plain walk-to paths never pace.
+- Split-spawn lairs (stitched zombies etc.): step decisions wait for a roster
+  parsed after the last kill, so a generation dying can't slip the room latch
+  before its spawns appear. Must-kill rooms stay latched through the split tree.
+- Teleport / text-command exits (go path, NPC asks) no longer stall the walker;
+  "Fight in lairs only" is honored by the instant-of-arrival verdict; phantom
+  cross-room fight commits (old room's pile peak marrying the next room's
+  roster) eliminated.
+- Settings that stick: every LOOP CFG edit saves instantly, sub-window close and
+  shutdown save, manual SAVE button on the mapwalker bar; the profile-reload
+  revert ghost is fixed at the root.
+- SEARCH_GET stops when the pack can't fit one more of the item (weight vs live
+  encumbrance) instead of retrying into "You cannot carry that much!";
+  an already-satisfied SEARCH_GET_REQUIRED still passes instantly.
+- STOP/pause, CLEAR and New/Cancel now abort a running smart-command chain.
+- QoL: round timer counts tenths below 2s on a steady bar; the loop recorder
+  header shows the saved loop's name; rest thresholds re-read your Health
+  settings the moment Save Character writes them.
+
 ## 1.008 — 2026-08-14
 - Walker safety hardening: wall bumps = instant freeze + re-verify + replan,
   with a permanent `wallbumps.log` record; hazard-exit and duplicate-move
