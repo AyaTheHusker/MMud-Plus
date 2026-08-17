@@ -3,6 +3,26 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.010 — 2026-08-17
+- Fast Lair Protection: LOOP CFG checkbox + seconds threshold — lairs
+  regenerating faster than it are flee-class (never fight, never rest, sprint
+  through and drag), with a flashing SKIP overlay on the map while a walk is
+  live. Regen source corrected to the room's true Delay field and verified
+  against live respawn timings; flee-class wins over must-kill and can't be
+  re-fought by stale latches.
+- SEARCH_GET rework: pack-aware batched gets ("get N item"), only gets what
+  the search actually revealed, QUANTITY ALL fills to capacity, retries bound
+  searches (default 10), stash-dry and server-refused stops; _REQUIRED bails
+  event chains home or parks a dynloop idle when unsatisfiable.
+- Committed-room fixes (live-log finds): previous-room slot counts can no
+  longer phantom-commit a small room after a fast arrival; casting a
+  song/spell mid-fight no longer reads as a manual combat toggle (the latched
+  fight re-engages after the cast dip). "Finish off lairs" renamed "Finish
+  off rooms" — it always applied to any latched room.
+- MadWiz: natural gear queries with level override and class-wearability
+  gates, compare-first dispatch, blur-AC recognized/displayed at your live
+  encumbrance, deterministic level-range queries.
+
 ## 1.009 — 2026-08-16
 - Drag mode: explicit LOOP CFG checkbox with a per-room delay that actually
   paces every room of the loop (armed on arrival from every position source;
