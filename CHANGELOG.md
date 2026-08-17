@@ -3,6 +3,15 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.011 — 2026-08-17
+- Pile counts settle before every step again: 1.010's Drag-mode checkbox
+  accidentally gated the mob-arrival settle hold, letting steps fire before
+  walk-ins were counted (a 5-pile read 4 and never latched); the hold now
+  applies on every min-monsters loop, and its enforcement gate matches.
+- The skip-stall breaker re-verifies position (rm + movement hold) before its
+  released step — a live escape had fired a direction the room didn't list,
+  six rooms off the believed position.
+
 ## 1.010 — 2026-08-17
 - Fast Lair Protection: LOOP CFG checkbox + seconds threshold — lairs
   regenerating faster than it are flee-class (never fight, never rest, sprint
