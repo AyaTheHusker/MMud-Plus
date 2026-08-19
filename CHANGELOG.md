@@ -3,15 +3,16 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
-## 1.012 — 2026-08-19
-- Combat flow: stragglers after an AOE are engaged within seconds (API pump on
-  the counter mismatch); re-blessing mid-fight is recognized as a buff dip and
-  the fight resumes on its own — manual combat toggles are still always obeyed.
-- Loot: floor-drop notices arriving mid-step now resolve to the arrival room
-  and the grab fires ahead of the next move — nothing slips through.
-- Walker: position quietly re-confirmed during on-arrival fights, so the first
-  post-combat step is always exact; no added delay on any step.
-- Desktop: KDE keep-above no longer re-latches on overlay windows.
+## 1.013 — 2026-08-19
+- Everything from 1.012 (which was published and WITHDRAWN the same day — do
+  not run it): stragglers engaged within seconds, buff re-casts never read as
+  combat toggles, mid-step drop notices resolve and grab before the next move,
+  in-fight position re-confirm, KDE keep-above fix.
+- Stability: fixed the rare client freeze 1.012 shipped (render-thread
+  cross-thread SetWindowPos deadlock in the new keep-above cleanup — now
+  posted async); engagement pumping bounded to 3 per room.
+
+## 1.012 — 2026-08-19 (WITHDRAWN — freeze; use 1.013)
 
 ## 1.011 — 2026-08-17
 - Pile counts settle before every step again: 1.010's Drag-mode checkbox
