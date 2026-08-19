@@ -3,6 +3,16 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.012 — 2026-08-19
+- Combat flow: stragglers after an AOE are engaged within seconds (API pump on
+  the counter mismatch); re-blessing mid-fight is recognized as a buff dip and
+  the fight resumes on its own — manual combat toggles are still always obeyed.
+- Loot: floor-drop notices arriving mid-step now resolve to the arrival room
+  and the grab fires ahead of the next move — nothing slips through.
+- Walker: position quietly re-confirmed during on-arrival fights, so the first
+  post-combat step is always exact; no added delay on any step.
+- Desktop: KDE keep-above no longer re-latches on overlay windows.
+
 ## 1.011 — 2026-08-17
 - Pile counts settle before every step again: 1.010's Drag-mode checkbox
   accidentally gated the mob-arrival settle hold, letting steps fire before
