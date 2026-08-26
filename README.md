@@ -6,7 +6,7 @@ Thanks to Syntax for adding the official plugin ABI: the old system was a
 reverse-engineered overlay that had to be rebuilt against every MegaMMUD
 update; the plugin integrates naturally and survives host updates.
 
-**Latest: [MMud+ 1.013](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
+**Latest: [MMud+ 1.015](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
 extract the zip into your MegaMUD folder and launch. Each release page carries
 its full changelog, and the plugin checks for updates on its own (hourly + at
 launch).
@@ -78,3 +78,4 @@ auto-generated "Source code" links on each release are just this readme.
 Free to use, modify, and share. See [LICENSE](LICENSE). The only ask: don't pass
 MMud+ (or a version based on it) off as your own — keep credit to the original
 author. Provided as-is, no warranty.
+
