@@ -3,6 +3,28 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.015 — 2026-08-25
+- Latch if HELD (Loop CFG): knocked down/entangled with enemies present =
+  the room latches as a committed fight and MegaMUD engages while you're
+  down; exit follows Finish-off (checked = clear the room, unchecked = kite
+  stragglers after the hold breaks). One mob is enough; Min monsters never
+  gates it.
+- Every hold type recognized from MegaMUD's own MESSAGES.md (knockdown,
+  entangle, web, chain, constriction, fear, freeze, manacles, ...): onset
+  parks the walker (no refused moves), the release line resumes it
+  instantly; the game's held flag strobes and is no longer trusted alone.
+- Below-rest safety watches every tick (engages mid-hold), commits like a
+  real latch, and can't be vetoed by count flickers or stale skip leases;
+  committed rooms can no longer be stepped out of / un-latched / refused an
+  engage while anything is alive. No parting AoE at below-min piles after a
+  finished rest.
+- Everything from 1.014 (internal, never published): overlay drag z-order +
+  KDE keep-above fix, secret doors without pause, spore fumbles retried
+  instantly, verified teleport retries, lair regen tooltips in minutes,
+  kiting re-blesses like stock.
+
+## 1.014 — internal build (see 1.015)
+
 ## 1.013 — 2026-08-19
 - Everything from 1.012 (which was published and WITHDRAWN the same day — do
   not run it): stragglers engaged within seconds, buff re-casts never read as
@@ -142,3 +164,4 @@ Games
 Overlays
 - Fixes to overlay click/drag handling so windows stop stealing clicks meant for
   the map underneath.
+
