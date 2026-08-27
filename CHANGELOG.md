@@ -3,6 +3,20 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.017 — 2026-08-27
+- Piles latch at the Min-monsters threshold at last: followers land 1-2s
+  after each step, so the threshold only ever crossed with a move in
+  flight and the commit could structurally never fire mid-drag. The
+  commit now follows the pile — the arrival room latches before the next
+  step, and the pile pours into an already-committed fight.
+- Committed fight rooms engage in under a second: the force-combat
+  failsafe was a silent no-op in the plugin build (rooms wedged passive
+  ~15s / 4-5 rounds until a breaker bailed them). Real API engage now.
+- Idle is truly silent: the legacy render-checksum room watcher (rm
+  ping-pong / prompt flicker while idle near floor loot) is retired in
+  the plugin build.
+- Log-flood guards on the failsafe and pickup-hold paths.
+
 ## 1.016 — 2026-08-27
 - Dynpath destination arrivals actively engage combat (the old idle-safe
   restore was a silent no-op in the plugin build — you sat passive while
@@ -183,5 +197,6 @@ Games
 Overlays
 - Fixes to overlay click/drag handling so windows stop stealing clicks meant for
   the map underneath.
+
 
 
