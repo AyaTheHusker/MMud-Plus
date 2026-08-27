@@ -3,6 +3,25 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.016 — 2026-08-27
+- Dynpath destination arrivals actively engage combat (the old idle-safe
+  restore was a silent no-op in the plugin build — you sat passive while
+  mobs swung). Event chains/loops keep their own arrival combat config;
+  a deliberate toolbar combat-off is always obeyed.
+- Doors can no longer strand the walker: both move-cancel paths (door
+  re-close rewind, "The door is closed!") clear the anti-double-move
+  guard, so the post-open retry actually goes out. Door retries beat at
+  600ms with an 8-try cap (the 1.015 hotfix, included).
+- Loot notices captured mid-step resolve to the room they were SEEN in
+  (age discriminator) — no more grabs firing in the wrong room while
+  the real coins/items get walked past. No parting AoE at below-min
+  piles after a finished rest.
+- Committed fights are unanimous across every verdict, safety net, and
+  step decision; the below-rest safety runs per-tick (engages
+  mid-knockdown) with raw-count fallback; the plugin's own combat-lease
+  writes can no longer be misread as user clicks (which disabled all
+  safeties for a run).
+
 ## 1.015 — 2026-08-25
 - Latch if HELD (Loop CFG): knocked down/entangled with enemies present =
   the room latches as a committed fight and MegaMUD engages while you're
@@ -164,4 +183,5 @@ Games
 Overlays
 - Fixes to overlay click/drag handling so windows stop stealing clicks meant for
   the map underneath.
+
 
