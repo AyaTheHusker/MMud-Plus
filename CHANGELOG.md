@@ -3,6 +3,15 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.018 — 2026-08-27
+- Use High Mana Limit (Loop CFG, under Min monsters): a second, usually
+  lower Min-monsters threshold that applies while ABSOLUTE current mana
+  is at/above a configured amount — burn surplus mana on smaller piles
+  instead of capping out; below the amount the normal limit applies.
+  Either/or, live-evaluated; latched rooms stay latched; limit 0 = off.
+- Includes the 1.017 same-day refresh: roster-gated steps (standing
+  piles latch in place) + dual-count mid-move arm.
+
 ## 1.017 — 2026-08-27
 - Piles latch at the Min-monsters threshold at last: followers land 1-2s
   after each step, so the threshold only ever crossed with a move in
@@ -197,6 +206,7 @@ Games
 Overlays
 - Fixes to overlay click/drag handling so windows stop stealing clicks meant for
   the map underneath.
+
 
 
 
