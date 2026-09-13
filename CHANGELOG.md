@@ -3,6 +3,48 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.022 — 2026-09-12 (MegaMUD 2.1 build)
+Rolls up the internal 1.019–1.021 builds — everything below ships here.
+- Two-ABI era: one plugin build per MegaMMUD host (2.1 and 2.2), every fix
+  on both. This release is the MegaMUD 2.1 build.
+- Dogshit Mode (under Low-detail): the lowest render tier, for genuinely
+  old machines.
+- Idle map frame-rate throttle — spares weak GPUs, snaps back to 60 on any
+  interaction; inert on best-quality.
+- Render scale (map settings): render the map internally at 75/50/33% and
+  upscale — big fill-rate win; only the map softens, text stays crisp.
+
+## 1.021 — internal build
+- Kite Curve: per-room drag delay scales with pile size — drag the curve
+  yourself in Loop CFG.
+- "You hear movement" delay: pause a beat before stepping into a chasing
+  pile so it lands on you, not one room back.
+- Instant movement: the step fires immediately; only your own pacing
+  settings pace the walk (per-step room redisplay killed).
+- Ghost-move repath re-fires a swallowed step instead of skipping a loop
+  section.
+
+## 1.020 — internal build
+- Target Monitor (Utilities menu): live hostile-count meter with room XP
+  total; kill explosions in 13 particle styles; CTRL shows the room
+  roster; red pulse ring while engaged; scales 0.5×–4×.
+- 60fps everywhere: vsync-serialized presents fixed per GL context; new
+  Perf Monitor widget (Utilities).
+- Held-flag stall failsafe: a stuck "can't move" self-clears in 25s.
+- After-step commands fire every step — the meditate hold is removed
+  (bless fires while meditating; verified against the live host).
+- Toolbar self-heal: missing Map/Convo/DYN icons re-injected automatically.
+
+## 1.019 — internal build
+- Wall bumps eliminated: a swallowed move is verified before the next
+  step ever fires.
+- AoE bail is final: stragglers never re-engaged off a stale roster read;
+  committed fights get a post-kill roster veto against count flickers.
+- Low-HP fight pump throttled — no more re-casting in a spin.
+- High Mana Limit: %-of-max mode + 150ms mana sampling (was 1s).
+- Doors: re-close detection vetoes stale open latches; door-slam rewinds
+  arm the ghost latch.
+
 ## 1.018 — 2026-08-27
 - Use High Mana Limit (Loop CFG, under Min monsters): a second, usually
   lower Min-monsters threshold that applies while ABSOLUTE current mana
