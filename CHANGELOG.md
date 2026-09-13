@@ -4,6 +4,11 @@ Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
 ## 1.022 — 2026-09-12 (MegaMUD 2.1 build)
+- Fixed: the mob-arrival settle hold no longer arms unless Drag mode or
+  Kite Curve is enabled. With every pacing checkbox off it still held each
+  step ~300ms in any room containing a mob (573 holds / 616 steps measured),
+  costing exp on dense loops. Hear-movement and the internal safety settles
+  are unchanged, so latching with Drag mode ON behaves exactly as before.
 Rolls up the internal 1.019–1.021 builds — everything below ships here.
 - Two-ABI era: one plugin build per MegaMMUD host (2.1 and 2.2), every fix
   on both. This release is the MegaMUD 2.1 build.
