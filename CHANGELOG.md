@@ -3,6 +3,39 @@
 Plugin era (MegaMMUD 2.1): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.024 — 2026-09-12 (MegaMUD 2.1 build)
+- Fixed: the walker could fire `op <dir>` at an exit that is not a door and
+  get "That is not a door or a gate!". The routing decision OR'd our fresh
+  "Obvious exits:" parse with the host exit_state mirror, so one stale
+  source outvoted two correct ones. The mirror is copied on every inbound
+  line with no room-identity check and is never invalidated on a room
+  change, so it can still describe the previous room. Our parse now wins
+  where it is authoritative; the mirror stays as the dark-room fallback.
+- Fixed: after a recovery the loop could resume at the FIRST occurrence of
+  the room it was standing in. A room at steps 54/56/58/88 of a 121-step
+  lap resumed at 54 — 34 cleared steps re-walked. Resume now picks the
+  occurrence nearest the step actually being walked, wrap-around aware.
+  Loops with lever/CMD doors keep the old behaviour (index spaces differ).
+- Fixed: in rooms it had already decided to skip, the walker sat in
+  combat-wait because the stale-slot roster veto was not checking whether
+  the room was committed. Measured 6.2s on one room, with combat-wait runs
+  of 30s/23s/19s in a session. The veto now guards only committed fights;
+  after the fix every break steps out in 0.60-0.69s.
+- New: while a dynloop is running, entering a room that is not part of it
+  logs one line ("[offloop] ENTERED m,r - NOT part of the active loop").
+  Mother loop only — detours, event destinations and event-chain legs are
+  excluded, and it re-arms when the loop resumes.
+
+## 1.023 — 2026-09-12 (MegaMUD 2.1 build)
+- Fixed: Render scale below Native painted the whole map walker solid
+  white, and because the setting lives inside that window there was no way
+  back from the UI. The upscale blit set GL_TEXTURE_ENV_MODE to GL_REPLACE
+  and never restored GL_MODULATE; that is global state, so the next frame's
+  map render discarded per-vertex colour and took the font atlas texel.
+  It only bit below Native because the path is skipped at 100%.
+- The map renderer now sets the texture env mode explicitly rather than
+  inheriting it, matching Dear ImGui's own GL backend.
+
 ## 1.022 — 2026-09-12 (MegaMUD 2.1 build)
 - Fixed: the mob-arrival settle hold no longer arms unless Drag mode or
   Kite Curve is enabled. With every pacing checkbox off it still held each
