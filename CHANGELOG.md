@@ -7,18 +7,17 @@ Plugin era (MegaMMUD 2.2): full notes live on each
 - New: loops repair their own position. If the walker's step index and the room
   it is standing in fall more than one step apart, it rebuilds the route from
   the confirmed room and carries on within three seconds, no input needed.
-  Rate-limited to one repath every three seconds, backing off to thirty, and it
-  never stops trying.
-- Why it was needed: a drag loop walks an out-and-back spine, so most rooms sit
-  on the route more than once (`14,4895` is both step 70 and step 74). If a step
-  is sent while a pile of mobs holds the character and the move does not land,
-  the cursor has advanced while the character has not moved. The pre-send
-  recalibrate deliberately refuses to reconcile a gap of more than one step —
-  that caution is correct, since adopting a mismatched index is how a direction
-  gets fired from a room the character is not in — but there was no way back out
-  of the disagreement, because re-asking `rm` returns the same room and matches
-  the same step. Rare, needing a repeated room and a held step at the same
-  moment, but the loop would sit until it was restarted.
+  One repath every three seconds, backing off to thirty, and it never stops.
+- Fixed: a rare stall this addresses. A drag loop walks an out-and-back spine,
+  so most rooms sit on the route more than once (`14,4895` is both step 70 and
+  step 74). If a step goes out while a pile of mobs holds the character and the
+  move does not land, the cursor has advanced while the character has not. The
+  pre-send recalibrate refuses to reconcile a gap of more than one step — that
+  caution is correct, since adopting a mismatched index is how a direction gets
+  fired from a room the character is not in — but there was no way back out,
+  because re-asking `rm` returns the same room and matches the same step. It
+  needed a repeated room and a held step at the same moment, so it was
+  uncommon, but the loop would wait until restarted.
 - The recalibrate guard is unchanged and still refuses to adopt a matched step
   index. The recovery routes around it rather than loosening it.
 - A one-step gap is a separate, harmless case (the `Location:` line had not
