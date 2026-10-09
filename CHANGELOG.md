@@ -4,37 +4,31 @@ Plugin era (MegaMMUD 2.2): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
 ## 1.046 — 2026-10-09 (MegaMUD 2.2 build)
-- Fixed: the walker could livelock in a single room indefinitely. A drag loop
-  walks an out-and-back spine, so the same room sits on the path twice —
-  `14,4895` was both step 70 and step 74. A step fired, seven mobs held the
-  character, the move never landed, and the step cursor had already advanced.
-  From then on the room resolved to step 74 while the walker believed step 76,
-  and the pre-send recalibrate refused to reconcile a two-step gap. The refusal
-  was closed: re-asking `rm` returned the same `map,room`, so the nearest-match
-  scan returned the same step, so the distance never changed. Measured at 4,396
-  refusals, one per second, six hours, zero experience. A confirmed position
-  that has disagreed by more than one step for three seconds now rebuilds the
-  route from the coordinates on the consumed `rm`, rate-limited to one repath
-  every three seconds and backing off to thirty. The guard itself is unchanged
-  and still refuses to adopt a matched step index — doing that once fired a
-  direction from a room the character was not in, outside the loop, onto a
-  three-mob lair.
-- Fixed: a one-step disagreement is a different and harmless case (the
-  `Location:` line simply had not landed yet) and still clears on the next tick.
-  162 of those in the same logs, all recovered; the new escape cannot fire on
-  them.
-- Fixed: the refusal log reported its age as 40.5 hours on a five-hour session.
-  The timer latched on the first refusal in the process and was never reset,
-  because the line meant to clear it was scoped where it could not see it. The
-  age is measured per hold now.
-- Fixed: that same log line said "position unconfirmed" on the one branch where
-  the position is confirmed — a `Location:` had arrived after the direction went
-  out. It now reports that the position is confirmed and the step index is what
-  cannot be explained, which is what was actually wrong. That one sentence hid
-  this bug across two occurrences.
-- Docs: the readme claimed MegaMMUD 2.0.5 as the required base (2.2 has been
-  required since 1.028) and advertised Paradigm 1.9.0 map data where the build
-  has shipped 1.9.1 for some time.
+- New: loops repair their own position. If the walker's step index and the room
+  it is standing in fall more than one step apart, it rebuilds the route from
+  the confirmed room and carries on within three seconds, no input needed.
+  Rate-limited to one repath every three seconds, backing off to thirty, and it
+  never stops trying.
+- Why it was needed: a drag loop walks an out-and-back spine, so most rooms sit
+  on the route more than once (`14,4895` is both step 70 and step 74). If a step
+  is sent while a pile of mobs holds the character and the move does not land,
+  the cursor has advanced while the character has not moved. The pre-send
+  recalibrate deliberately refuses to reconcile a gap of more than one step —
+  that caution is correct, since adopting a mismatched index is how a direction
+  gets fired from a room the character is not in — but there was no way back out
+  of the disagreement, because re-asking `rm` returns the same room and matches
+  the same step. Rare, needing a repeated room and a held step at the same
+  moment, but the loop would sit until it was restarted.
+- The recalibrate guard is unchanged and still refuses to adopt a matched step
+  index. The recovery routes around it rather than loosening it.
+- A one-step gap is a separate, harmless case (the `Location:` line had not
+  landed yet) and still clears on the next tick; the new recovery is scoped so
+  it cannot fire on those.
+- Diagnostics: the recalibrate log line reports a per-hold age instead of a
+  running process total, and distinguishes a confirmed position with an
+  unexplained step jump from a genuinely unconfirmed one.
+- Docs: the readme now states MegaMMUD 2.2 as the required base (2.2 has been
+  required since 1.028) and Paradigm 1.9.1 map data, matching what ships.
 
 ## 1.024 — 2026-09-12 (MegaMUD 2.1 build)
 - Fixed: the walker could fire `op <dir>` at an exit that is not a door and
