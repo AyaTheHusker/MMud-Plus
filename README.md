@@ -1,12 +1,12 @@
-## MMud+ for MegaMMUD 2.1 — official plugin (current)
+## MMud+ for MegaMMUD 2.2 — official plugin (current)
 
-**MMud+ now ships as an official MegaMMUD 2.1 plugin** — one file,
+**MMud+ now ships as an official MegaMMUD 2.2 plugin** — one file,
 `Plugins\MMudPlus\MMudPlus.dll`, loaded through MegaMMUD's own plugin API.
 Thanks to Syntax for adding the official plugin ABI: the old system was a
 reverse-engineered overlay that had to be rebuilt against every MegaMMUD
 update; the plugin integrates naturally and survives host updates.
 
-**Latest: [MMud+ 1.024](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
+**Latest: [MMud+ 1.046](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
 extract the zip into your MegaMUD folder and launch. Each release page carries
 its full changelog, and the plugin checks for updates on its own (hourly + at
 launch).
