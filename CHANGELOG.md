@@ -3,6 +3,44 @@
 Plugin era (MegaMMUD 2.2): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.050 — 2026-10-19 (MegaMUD 2.2 build)
+- New: drag loops count mobs as they walk in ("… moves into the room from the
+  …") and latch in that room as soon as the room plus the arrivals reaches your
+  Min monsters (or high-mana minimum). In slower-follow areas the latch now
+  lands where the pile builds up instead of one room further along.
+- Only mobs your monster database marks as Enemy are counted, never players or
+  unrecognised names. The count is per room, starts fresh on every step and
+  every room display, only ever adds, and never delays movement. A latch from
+  arrivals sends one Enter so MegaMUD's room list and mob counter catch up.
+- Improved: one location check per step. The second `rm` now only goes out
+  when the first answer genuinely has not arrived.
+
+## 1.049 — 2026-10-14 (MegaMUD 2.2 build)
+- Fixed: the Ancient Fortress pit exits (17/2857 east, 17/2859 west) route to
+  the room you normally arrive in. The pit is only the outcome when the trap
+  lands, so the corridor plans as a normal walk and re-paths if you fall in.
+
+## 1.048 — 2026-10-13 (MegaMUD 2.2 build)
+- Improved: resting stands up as soon as your mana is full. While resting the
+  walker refreshes hp and mana every 150ms instead of on the round tick. Gear
+  lists before and after resting are unchanged.
+- Improved: Conversations+ draws its scrollback far more cheaply, keeping the
+  frame rate (and typing) smooth with a full backlog. New `[convo-lat]` log
+  line for keystroke-to-screen latency.
+- Fixed: holding backspace in a conversation stops when you let go.
+
+## 1.047 — 2026-10-10 (MegaMUD 2.2 build)
+- Fixed: the leader's `.@party <command>` before a teleport exit always goes
+  out, so the party stays together across the jump. A brief empty-roster read
+  is now held over instead of believed, which also tidies the party widget.
+- Improved: `@comeback` works when the leader has stopped; the leader collects
+  the member and carries on to where it was headed.
+- Improved: pickups queue, so several members calling at once are fetched in
+  turn. A `@comeback x,y` for a room the party never visited sweeps the real
+  trail instead.
+- Improved: typing in Conversations+ and MadWiz stays smooth with Realmwalker+
+  open and Low-detail on.
+
 ## 1.046 — 2026-10-09 (MegaMUD 2.2 build)
 - New: loops repair their own position. If the walker's step index and the room
   it is standing in fall more than one step apart, it rebuilds the route from
