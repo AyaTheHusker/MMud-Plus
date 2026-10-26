@@ -3,6 +3,30 @@
 Plugin era (MegaMMUD 2.2): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.051 — 2026-10-26 (MegaMUD 2.2 build)
+- New: the Amber Fortress thief puzzle is walked for you: gems stolen and
+  placed, both crystals grabbed, and the old thief asked to take you to the
+  Dank Alley. Skill rolls are retried until the item arrives.
+- New: keys are planned before a walk sets off. The Arlysia Library key comes
+  from the old hermit once your quest step is done.
+- Improved: route planning repeats far less work (an Ocean Floor walk went from
+  about 17 seconds to under half a second), and items come from the nearest
+  source, shop or NPC.
+- Improved: the items-needed box, shopping-trip cancel, item-gated exits and
+  inventory reads before planning.
+- Improved: Amber Fortress filter rooms follow the game's own class lists.
+- New: must-kill groups `3 (stingray, jellyfish)` and always-entries
+  `((elder redcap))` / `4 ((a, b, c))`, which apply on every walk and switch
+  auto-combat on until the room is clear, then restore your setting. Plain
+  entries are loop-only. The list is re-checked as soon as the walker moves.
+- New: Use Mana Regen Spell when Idle/Party Follower (off by default).
+- Redesigned: Target Monitor menu and particle styles that theme the whole
+  widget; DPI-aware sizing; combat border on the outer edge.
+- Improved: loops can carry their own folder (`folder=`), and the bottom bar
+  shares its space evenly.
+- The release now includes `MMudPlus.dll` as its own download, so the splash's
+  Update Now installs it directly.
+
 ## 1.050 — 2026-10-19 (MegaMUD 2.2 build)
 - New: drag loops count mobs as they walk in ("… moves into the room from the
   …") and latch in that room as soon as the room plus the arrivals reaches your
