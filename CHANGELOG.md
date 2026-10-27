@@ -3,6 +3,23 @@
 Plugin era (MegaMMUD 2.2): full notes live on each
 [release page](https://github.com/AyaTheHusker/MMud-Plus/releases).
 
+## 1.053 — 2026-10-27 (MegaMUD 2.2 build)
+- New: animated map backgrounds. In the map walker's Settings → MAP BACKGROUND,
+  set Black space to Animated Background (GL) and pick one of eleven styles:
+  Ocean Reef, Lava Fields, Silver River, Scorching Desert, Frozen Caverns, Deep
+  Mines, Void, Jungle, Silvermere, Blackwood or Fungus Forest.
+- Creatures keep clear of your map tiles and the scenery calms down around them,
+  so the map always reads first. The scenes react to you: creatures scatter as you
+  walk, gather at fights, and kills leave their mark.
+- Every style has its own sliders and Reset, saved per character. Smart quality
+  keeps the map and every other window at full frame rate. Solid Black stays the
+  default and loads nothing.
+- Improved: the map walker's Settings page scrolls.
+
+## 1.052 — 2026-10-27 (MegaMUD 2.2 build)
+- Improved: clicking a (?) in Loop CFG opens the full help in its own window that
+  you can move, resize and scroll.
+
 ## 1.051 — 2026-10-26 (MegaMUD 2.2 build)
 - New: the Amber Fortress thief puzzle is walked for you: gems stolen and
   placed, both crystals grabbed, and the old thief asked to take you to the

@@ -6,7 +6,7 @@ Thanks to Syntax for adding the official plugin ABI: the old system was a
 reverse-engineered overlay that had to be rebuilt against every MegaMMUD
 update; the plugin integrates naturally and survives host updates.
 
-**Latest: [MMud+ 1.051](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
+**Latest: [MMud+ 1.053](https://github.com/AyaTheHusker/MMud-Plus/releases/latest)** —
 extract the zip into your MegaMUD folder and launch. Each release page carries
 its full changelog, and the plugin checks for updates on its own (hourly + at
 launch).
@@ -41,6 +41,11 @@ removed at any time by deleting the files it adds.
   you can check what you got, straight from the overlay
 - **Realmwalker+** — a live, zoomable GPU map walker with animated loop tiles,
   combat FX, pathfinding and a full loop/config editor
+- **Animated map backgrounds** — eleven living biomes behind the map (ocean reef,
+  lava fields, silver river, desert, frozen caverns, deep mines, the void, jungle,
+  a lamplit town, a haunted forest and a fungus forest), with creatures that keep
+  clear of your tiles and react as you walk and fight. Optional; Solid Black is the
+  default and costs nothing
 - **Convo+** — a rich conversations window that mirrors every chat line 1:1 with
   channel colors, inline emoji and media
 - **MadWiz** — an in-game oracle: reads your character live and answers sims,
@@ -53,6 +58,8 @@ removed at any time by deleting the files it adds.
 ![Realmwalker+ map](screens/realmwalker_map.png)
 
 ![Event chain editor](screens/event_chains.png)
+
+![Animated map backgrounds](screens/map_backgrounds.jpg)
 
 ## Install
 
